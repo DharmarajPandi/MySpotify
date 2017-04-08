@@ -1,0 +1,27 @@
+<h1>Start Browse</h1>
+<p class='lead'>some text here to type.Long Text!!!!!!</p>
+
+<form>
+<div class='form-group'>
+    <input type='text' (keyup)='searchMusic()' class='form-control' name='searchStr' [(ngModel)]='searchStr' placeholder="Enter anything..."/>
+</div>
+</form>
+
+<div *ngIf='searchRes'>
+<div *ngFor='let res of searchRes'>
+<div class='rows'>
+<div class='col-md-12'>
+<div class='search-res well'>
+<h4><a routerLink="/artist/{{res.id}}">{{res.name}}</a></h4>
+<div>
+ <strong>Genre</strong>
+<span *ngFor="let gen of res.genres">
+    {{gen}}
+</span>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
